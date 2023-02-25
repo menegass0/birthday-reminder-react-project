@@ -67,6 +67,11 @@ body {
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
+  overflow-y: auto;
+}
+
+body::-webkit-scrollbar{
+  width: 0;
 }
 ul {
   list-style-type: none;
