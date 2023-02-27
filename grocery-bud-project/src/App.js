@@ -40,7 +40,7 @@ function App() {
       {list.length >0 && (
         <div className="grocery-container">
           <List items={list}/>
-          <button className='clear-btn'>clear items</button>
+          <button className='clear-btn' onClick={() => setList([])}>clear items</button>
         </div>
       )}
     </section>
