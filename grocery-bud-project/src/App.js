@@ -25,7 +25,7 @@ function App() {
       const newItem = {id: new Date().getTime().toString(),
       title:name,}
       setList([...list, newItem]);
-      showAlert(false);
+      showAlert();
       setName('');
     }
   }
@@ -37,7 +37,7 @@ function App() {
   return (
     <section className="section-center">
       <form action="" className='grocery-form' onSubmit={handleSubmit}>
-        {alert.show && <Alert {...alert} />}
+        {alert.show && <Alert {...alert} removeAlert={showAlert} />}
         <h3>grocery bud</h3>
         <div className="form-control">
           <input type="text" className='grocery' placeholder='e.g eggs' value={name} onChange={(e) => setName(e.target.value)}/>
