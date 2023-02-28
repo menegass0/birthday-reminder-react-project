@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { FaBars, FaTwitter } from 'react-icons/fa'
+import { FaBars } from 'react-icons/fa'
 import { links, social } from './data'
 import logo from './logo.svg'
 
@@ -26,15 +26,14 @@ const Navbar = () => {
           </ul>
         </div>
         <ul className="social-icons">
-          <li>
-            <a href="https:/www.twitter.com"><FaTwitter /></a>
-          </li>
-          <li>
-            <a href="https:/www.twitter.com"><FaTwitter /></a>
-          </li>
-          <li>
-            <a href="https:/www.twitter.com"><FaTwitter /></a>
-          </li>
+          {social.map((socialIcon)=>{
+            const {id, url, icon} = socialIcon;
+            return(
+              <li key={id}>
+                <a href={url}>{icon}</a>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </nav>
