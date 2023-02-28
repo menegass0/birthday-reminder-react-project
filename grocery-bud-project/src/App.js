@@ -34,7 +34,10 @@ function App() {
     setAlert({show, type, msg})
   }
   
-  
+  const removeItem = (id) =>{
+    showAlert(true, 'danger', 'item removed');
+    setList(list.filter((item) => item.id !== id))
+  }
   return (
     <section className="section-center">
       <form action="" className='grocery-form' onSubmit={handleSubmit}>
@@ -49,7 +52,7 @@ function App() {
       </form>
       {list.length > 0 && (
         <div className="grocery-container">
-          <List items={list}/>
+          <List items={list} removeItem={removeItem}/>
           <button className='clear-btn' onClick={() => {
             setList([]);
             showAlert(true, 'danger', 'empyt list')
